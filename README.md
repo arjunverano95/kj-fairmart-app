@@ -1,4 +1,4 @@
-# 📘 Project Proposal
+# Project Proposal and Scope of Work
 
 ## KJ Fairmart Supermarket
 
@@ -8,186 +8,204 @@
 
 ## 1. Executive Summary
 
-KJ Fairmart Supermarket proposes to implement a **Customer Membership System** that provides customers with a **Digital Membership ID (QR-based)** and a platform to view **benefits, promotions, and events** through a **mobile application**. A secure **Admin Portal** will be used by staff to encode membership applications, manage approvals, renew memberships, and publish content.
+KJ Fairmart Supermarket intends to implement a Customer Membership System that provides members with a QR-based Digital Membership ID and a customer-facing mobile application for viewing announcements, promotions, benefits, and events. The solution includes an Admin Portal to support store operations for membership application encoding, administrative approval, membership renewals, member management, and content publishing.
 
-This project is designed as a **low-cost, fast-launch MVP** focused on digitizing membership identification and customer communication. The system will **not** include points, transactions, POS integration, or vouchers in Phase 1.
+This proposal outlines a streamlined, cost-effective MVP designed for quick deployment while establishing a solid foundation for future enhancements. Phase 1 will intentionally exclude points, vouchers, transaction tracking, POS integrations, and hardware integrations to keep the project within budget and enable rapid launch.
 
 ---
 
 ## 2. Project Objectives
 
-### Primary Objectives
+### 2.1 Primary Objectives
 
-* Digitize KJ Fairmart’s membership card system
-* Provide each member with a **Digital ID with QR Code**
-* Enable store staff to **facilitate customer sign-ups**
-* Enable admin to **approve, reject, and renew memberships**
-* Provide customers access to:
+* Digitize the KJ Fairmart membership card program with a unified, secure member database.
+* Provide members a Digital ID with QR code for in-store validation and future expansion.
+* Enable branch staff to facilitate customer sign-ups through an assisted, paper-based intake process.
+* Provide administrative workflows for application approval/rejection, renewals, and membership status management.
+* Provide a content publishing platform for customer communications (announcements, promotions, benefits, events, banners).
+* Deliver mobile applications (Android and iOS) for member access to ID and engagement content.
+* Provide administrative Settings for managing system users and branches.
 
-  * Benefits
-  * Promotions
-  * Events and announcements
-* Launch quickly within budget
+### 2.2 Phase 1 Constraints
 
-### Constraints (Phase 1 / MVP)
-
-* No points or rewards system
-* No voucher system
-* No transaction history
-* No POS or third-party integrations
-* No hardware integrations (scanners, printers, etc.)
+* No points or rewards computation.
+* No redemption or voucher system.
+* No transaction history or purchase tracking.
+* No POS integration or third-party API integrations.
+* No device/hardware integration (e.g., barcode scanners, printers, magstripe readers).
 
 ---
 
-## 3. Target Members & Membership Structure
+## 3. Membership Model and Branch Coverage
 
-### Customer Categories
+### 3.1 Membership Coverage
 
-1. Home Buyers
-2. Resellers
-3. Institutional / Corporate Accounts (restaurants, offices, etc.)
+Membership accounts are company-wide and usable across all KJ Fairmart branches. Each member has a single membership record and a single card number recognized at any branch.
 
-### Membership Tiers
+### 3.2 Branch as Metadata
+
+Branch information is captured for operational tracking and reporting purposes only. Examples include:
+
+* Branch Applied At
+* Branch filter and reporting in Admin Portal
+* Optional renewal processing branch (if required later)
+
+Membership ownership is not limited to a branch to prevent cross-branch recognition issues and to support future expansions such as voucher or points-based programs.
+
+---
+
+## 4. Target Members and Membership Structure
+
+### 4.1 Member Categories
+
+* Home Buyers
+* Resellers
+* Institutional / Corporate Accounts (restaurants, offices, etc.)
+
+### 4.2 Membership Tiers
 
 * Silver
 * Gold
 
-### Membership Validity
+### 4.3 Validity and Renewal
 
-* Each membership has:
-
-  * Start Date
-  * Expiration Date
-* Membership is **renewable**
-* Renewal is done **by Admin** via Admin Portal
+* Membership records include Start Date and Expiration Date.
+* Membership can expire and is renewable.
+* Membership renewal is performed by an Admin user through the Admin Portal.
 
 ---
 
-## 4. System Components
+## 5. Solution Components
 
-### A) Admin Portal (Web)
+### 5.1 Admin Portal (Web)
 
-Used by staff and admin to:
+A web-based portal used for membership operations and content management.
 
-* Encode paper-based membership applications
-* Approve or reject applications
-* Renew memberships
-* Manage members
-* Manage content (promos, events, benefits, announcements)
+Core responsibilities:
 
-### B) Mobile App (Android & iOS)
+* Encode paper-based membership applications.
+* Process approvals/rejections (Admin).
+* Manage renewals (Admin).
+* Maintain member records and statuses.
+* Publish engagement content (Admin).
+* Manage system users and branches (Admin).
 
-Used by customers to:
+**Admin Portal Navigation (Sidebar Modules):**
 
-* Log in using their **Card Number**
-* View Digital Membership ID (QR)
-* View benefits, promotions, and events
-* View membership status (Active / Expired)
-* View profile
+* Dashboard
+* Member Registration
+* Cardholder Management
+* Content Management
+* Settings (Users + Branches)
+* Log Out
 
----
+### 5.2 Mobile Application (Android & iOS)
 
-## 5. Roles & Permissions
+A customer-facing mobile app for membership access and engagement.
 
-### 5.1 Standard User (Staff / Encoder)
+**Bottom Navigation Tabs:**
 
-**Can:**
-
-* Encode membership applications (from paper forms)
-* Submit applications for approval
-
-**Cannot:**
-
-* Approve or reject applications
-* Renew memberships
-* Deactivate members
-* Manage content (promos/events/benefits/banners)
-* Change membership tier or status
+* Home
+* Benefits
+* Digital ID
+* Profile
 
 ---
 
-### 5.2 Admin (Approver / Manager)
+## 6. User Roles and Access Control
 
-**Can:**
+### 6.1 Standard User (Staff / Encoder)
 
-* Approve or reject membership applications
-* Renew memberships
-* Deactivate members
-* Manage membership tiers (Silver/Gold)
-* Manage content:
+Purpose: Facilitate membership registration intake and encoding.
 
-  * Benefits
-  * Promotions
-  * Events
+**Permitted Actions**
+
+* Encode membership applications from paper forms.
+* Upload member ID photo during application encoding (if applicable).
+* Submit encoded applications for Admin review.
+
+**Restricted Actions**
+
+* Cannot approve or reject applications.
+* Cannot renew memberships.
+* Cannot deactivate memberships.
+* Cannot change tier or membership status.
+* Cannot manage content.
+* Cannot manage system settings (users/branches).
+
+### 6.2 Admin (Approver / Manager)
+
+Purpose: Manage approvals, membership lifecycle, content publishing, and system settings.
+
+**Permitted Actions**
+
+* Approve or reject membership applications.
+* Renew memberships and extend expiration dates.
+* Deactivate memberships.
+* Manage tier assignment (Silver/Gold).
+* Publish and manage content:
+
   * Announcements / Notices
+  * Promotions
+  * Benefits
+  * Events
   * Banners
-* Export member list to Excel
+* Export member lists to Excel.
+* Manage Settings:
+
+  * User Management (create/edit/deactivate staff/admin users)
+  * Branch Management (create/edit branches)
 
 ---
 
-## 6. Registration & Credential Flow (Final)
+## 7. Registration, Approval, and Credential Workflow
 
-### 6.1 Primary Registration Method (Paper-Based, In-Store)
+### 7.1 Primary Registration Method (Paper-Based, In-Store)
 
-1. Customer requests membership and fills out a **paper application form**.
-
-2. The form already contains or is assigned a **Card Number**.
-
-3. Staff informs the customer of their **future login credentials**:
+1. Customer completes a paper membership application form at the branch.
+2. The form contains or is assigned a Card Number.
+3. Staff provides the customer with their future login credentials:
 
    * **Username:** Card Number
-   * **Temporary Password:**
+   * **Temporary Password:** LAST NAME (uppercase) + last 3 digits of Card Number
 
-     > **LAST NAME (uppercase) + last 3 digits of Card Number**
+     * Example: Name: Maria SANTOS, Card No: KJ-2026-0012345 → Temp Password: SANTOS345
+4. Staff retains the form for encoding.
+5. Staff (Standard User) encodes the application into the Admin Portal.
+6. The application is recorded as Pending Approval.
+7. Admin approves or rejects the application.
+8. Upon approval:
 
-   Example:
+   * Membership becomes Active.
+   * Digital ID with QR code becomes available in the mobile app.
+   * Customer account login becomes available.
 
-   * Name: Maria **SANTOS**
-   * Card No: KJ-2026-0012345
-   * Temporary Password: **SANTOS345**
+> Customers may know their credentials in advance; however, login becomes available only after the application is encoded and approved.
 
-4. Staff collects the form for processing.
-
-5. Staff (Standard User) encodes the application into the system.
-
-6. Admin reviews and **approves or rejects** the application.
-
-7. Upon approval:
-
-   * Membership becomes active
-   * Digital ID + QR code is generated
-   * Account becomes usable
-
-> ⚠️ Customer may know their credentials in advance, but **login will only work after the account is encoded and approved**.
-
----
-
-### 6.2 Login Rules
+### 7.2 Login Rules
 
 * **Username:** Card Number
-* **Password:** Customer password (initially temporary)
+* **Password:** Temporary password until changed by the customer.
 
-If customer attempts to log in before account exists or is approved:
+If a customer attempts to log in before their account is available or approved, the app should display:
 
-> “Your membership is not yet activated. Please wait for approval or contact the branch.”
+* “Your membership is not yet activated. Please wait for approval or contact the branch.”
 
----
+### 7.3 First Login Security Requirement
 
-### 6.3 First Login Security Rule
+On the customer’s first successful login:
 
-On first successful login:
-
-* System **forces the customer to change their password**
-* Temporary password becomes invalid
+* The app must require a password change.
+* The temporary password is no longer valid after a successful change.
 
 ---
 
-## 7. Membership Status Lifecycle
+## 8. Membership Status Lifecycle
 
-Each membership record will have these statuses:
+The system supports clear membership states:
 
-* Paper Submitted (not yet in system)
-* Pending Approval (encoded, waiting for admin)
+* Paper Submitted (not yet encoded in system)
+* Pending Approval
 * Active
 * Rejected
 * Expired
@@ -195,33 +213,33 @@ Each membership record will have these statuses:
 
 ---
 
-## 8. Membership Expiration & Renewal
+## 9. Membership Expiration and Renewal
 
-* Every membership has an **expiration date**
-* When expired:
+* Membership includes an Expiration Date.
+* When expired, the Digital ID must show a clearly visible “Expired” status.
+* Renewal is performed by Admin users only:
 
-  * Digital ID will show **EXPIRED**
-* Renewal Process (Admin only):
-
-  1. Customer requests renewal at store
-  2. Admin finds member record
-  3. Admin clicks **Renew Membership**
-  4. System extends expiration date (e.g., +1 year)
-  5. Status returns to **Active**
+  1. Customer requests renewal.
+  2. Admin locates the member record.
+  3. Admin triggers “Renew Membership.”
+  4. The system extends Expiration Date based on configured rules.
+  5. Status returns to Active.
 
 ---
 
-## 9. Member Data Captured
+## 10. Member Data Captured
 
-* Card Number
+The system will store the following information per member:
+
+* Card Number (unique)
 * Full Name
 * Date of Birth
 * Address
 * Email (optional)
-* Customer Category (Home / Reseller / Institution)
+* Category (Home / Reseller / Institution)
 * Tier (Silver / Gold)
 * Company / Store Name (if applicable)
-* Branch Applied At
+* Branch Applied At (metadata)
 * ID Type
 * ID Photo
 * Membership Start Date
@@ -230,130 +248,157 @@ Each membership record will have these statuses:
 
 ---
 
-## 10. Functional Scope
+## 11. Functional Scope
 
-### 10.1 Admin Portal (Web)
+### 11.1 Admin Portal
 
-**Standard User**
+**A) Member Registration (Standard User)**
 
-* Encode membership applications
-* Upload ID photo
-* Submit for approval
+* Encode new membership applications.
+* Capture required member details and attach ID photo.
+* Submit application for approval.
 
-**Admin**
+**B) Cardholder Management (Admin)**
 
-* Approval dashboard
-* Approve / Reject applications
-* Renew memberships
-* Deactivate members
-* Change tier
-* Content management:
+* Search and filter members.
+* View member details.
+* Approve or reject applications.
+* Renew membership.
+* Deactivate membership.
+* Export members to Excel.
 
-  * Benefits
-  * Promotions
-  * Events
+**C) Content Management (Admin)**
+
+* Create/edit/publish:
+
   * Announcements / Notices
-  * Banners
-* Export members to Excel
-
----
-
-### 10.2 Mobile App (Android & iOS)
-
-* Login via Card Number
-* Forced password change on first login
-* Digital ID Card:
-
-  * QR code
-  * Name
-  * Tier
-  * Status (Active / Expired)
-* Pages:
-
-  * Benefits
   * Promotions
+  * Benefits
   * Events
-* Profile view (read-only)
+  * Banners
+
+**D) Dashboard (Admin)**
+
+* High-level indicators such as:
+
+  * Total members
+  * Pending approvals
+  * Members expiring soon (recommended)
+
+**E) Settings (Admin)**
+
+* User Management:
+
+  * Create/edit/deactivate system users (staff/admin).
+* Branch Management:
+
+  * Create/edit branch records used for application capture and filtering.
+
+### 11.2 Mobile Application
+
+**A) Authentication**
+
+* Login using Card Number + Password.
+* First-login password change flow.
+
+**B) Home Tab**
+
+* Display announcements, promotions, and events in a clean banner/feed layout.
+
+**C) Benefits Tab**
+
+* Display membership benefits and privileges, including tier-related information (Silver/Gold).
+
+**D) Digital ID Tab**
+
+* Display QR-based digital membership card including:
+
+  * Card number
+  * Member name
+  * Tier
+  * Membership status (Active/Expired)
+
+**E) Profile Tab**
+
+* View and update profile information (fields to be confirmed if editable).
+* Change password.
+* Log out.
 
 ---
 
-## 11. Data Storage & Export
+## 12. Data Storage and Export
 
-* Data stored in system database
-* Admin can export membership list to **Excel**
+* Member and content data will be stored in a database suitable for production use.
+* Admin users will have the ability to export member lists to Excel. Export should support current filters when applicable.
 
 ---
 
-## 12. Out of Scope (Phase 1)
+## 13. Out of Scope (Phase 1)
 
-* Points & rewards
-* Redemption system
-* Voucher system
-* Transaction history
-* POS integration
-* Device integration
+The following items are excluded from Phase 1 and may be considered for a future phase:
+
+* Points/rewards computation
+* Redemption flows
+* Voucher issuance and consumption
+* Transaction history and purchase tracking
+* POS integrations
+* Hardware/device integrations
 * Third-party API integrations
+* Push notifications/SMS campaigns (optional future enhancement)
 
 ---
 
-## 13. Deliverables
+## 14. Deliverables
 
 * Admin Portal (Web)
 * Mobile App (Android)
 * Mobile App (iOS)
-* Membership database
-* Digital ID + QR system
-* Content management module
-* Excel export
-* Basic documentation
+* Member database and core membership workflows
+* Digital ID + QR generation and display
+* Content management module (Admin Portal)
+* Excel export functionality
+* Basic documentation (admin guide and operational flow)
 
 ---
 
-## 14. Budget & Approach
+## 15. Budget and Delivery Approach
 
 **Target Budget:** PHP 50,000
-**Approach:**
 
-* Build MVP first
-* Focus on membership + digital ID + content
-* Defer complex features to Phase 2
+Delivery will prioritize an MVP build approach:
 
----
-
-## 15. Success Criteria
-
-### Customers can:
-
-* Log in using Card Number
-* Change password on first login
-* View Digital ID
-* See Active / Expired status
-* View benefits, promotions, and events
-
-### Staff/Admin can:
-
-* Encode paper applications
-* Approve/reject applications
-* Renew memberships
-* Manage members
-* Publish content
-* Export to Excel
+* Implement core membership and content workflows first.
+* Provide a stable production baseline.
+* Defer advanced loyalty mechanics and integrations to later phases.
 
 ---
 
-## 16. Phase 2 (Future Enhancements)
+## 16. Success Criteria
 
-* Voucher system
-* Points-based loyalty
-* POS integration
-* QR scanning validation
-* Push notifications / SMS
-* Tier-based benefits automation
+### Customer Success Criteria
+
+* Customers can log in using card number once approved.
+* Customers are prompted to change password on first login.
+* Customers can view a Digital ID with QR code and see membership status clearly.
+* Customers can access Home (announcements/promos/events), Benefits, and Profile screens.
+
+### Administrative Success Criteria
+
+* Standard users can encode membership applications and submit for approval.
+* Admin can approve/reject applications, renew memberships, deactivate accounts, and manage tiers.
+* Admin can publish and manage customer-facing content.
+* Admin can export members to Excel.
+* Admin can manage system users and branches via Settings.
 
 ---
 
-## 17. Items to Confirm
+## 17. Items for Confirmation
 
-* Membership validity period (e.g., 1 year)
-* Renewal duration (e.g., +1 year per renewal)
+To complete implementation details, the following items should be confirmed:
+
+* Membership validity period (e.g., 12 months)
+* Renewal extension rule (e.g., extend by 12 months per renewal)
+* Which profile fields are editable by customers in the mobile app
 * Whether expired members can still browse content (recommended: yes)
+
+---
